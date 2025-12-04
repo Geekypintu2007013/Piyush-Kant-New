@@ -1,0 +1,16 @@
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+.student-category:nth-of-type(3) .students-grid {
+    gap: 20px;
+}
+
+@media (max-width: 768px) {
+    .students-grid {
+        grid-template-columns: 1fr;
+    }
+}

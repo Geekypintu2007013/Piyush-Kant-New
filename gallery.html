@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery | Piyush Kant Portfolio</title>
+  <style>
+    * {box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif;}
+    body {
+      background: linear-gradient(135deg, #0a0f29, #12224c, #1b3b6f, #0a0f29);
+      background-size: 300% 300%;
+      animation: gradientShift 8s ease infinite;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 70px 20px;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+    header h1 {
+      font-size: 46px;
+      color: #00ffff;
+      text-shadow: 0 0 15px #00ffff90;
+    }
+    header p {
+      color: #c9d6ff;
+      font-size: 18px;
+      margin-top: 10px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    /* ⭐ Centered Row Titles */
+    .gallery-title {
+      text-align: center;
+      font-size: 32px;
+      margin: 40px 0 15px;
+      font-weight: 700;
+      color: #00ffff;
+      text-shadow: 0 0 12px #00ffff60;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 50px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: floatUp 1s ease forwards;
+    }
+
+    /* ⭐ Breathing Animation */
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      animation: breathing 4s ease-in-out infinite;
+    }
+
+    @keyframes breathing {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    .photo:hover img {
+      transform: scale(1.15);
+      filter: brightness(1.15);
+    }
+
+    .photo:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1), rgba(0,0,0,0.9));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .photo:hover .overlay {
+      opacity: 1;
+    }
+
+    .overlay h3 {
+      font-size: 22px;
+      color: #00ffff;
+      margin-bottom: 6px;
+      text-shadow: 0 0 8px #00ffff80;
+    }
+
+    .overlay p {
+      font-size: 14px;
+      color: #ddd;
+      text-align: center;
+      max-width: 220px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #bbb;
+      font-size: 15px;
+      letter-spacing: 1px;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from {opacity: 0; transform: translateY(-40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(40px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes floatUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes gradientShift {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Scroll fade-in */
+    .fade {opacity: 0; transform: translateY(20px); transition: all 0.5s ease-out;}
+    .fade.visible {opacity: 1; transform: translateY(0);}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lab Gallery</h1>
+    <p>Explore innovation at <b>EMPowER Lab – Piyush Kant</b></p>
+  </header>
+
+<section class="gallery-section">
+
+    <!-- ⭐ ROW 1 TITLE -->
+    <h2 class="gallery-title">Lab Projects</h2>
+    <section class="gallery">
+        <div class="photo fade"><img src="images/Bidectional_ev.jpg"><div class="overlay"><h3>Section A</h3><p>Performing Test</p></div></div>
+        <div class="photo fade"><img src="images/Linefrequency.jpg"><div class="overlay"><h3>Section B</h3><p>Performing Test</p></div></div>
+        <div class="photo fade"><img src="images/table1.jpg"><div class="overlay"><h3>Section C</h3><p>Performing Test</p></div></div>
+        <div class="photo fade"><img src="images/table2.jpg"><div class="overlay"><h3>Section D</h3><p>Performing Test</p></div></div>
+        <div class="photo fade"><img src="images/table3.jpg"><div class="overlay"><h3>Section E</h3><p>Performing Test</p></div></div>
+        <div class="photo fade"><img src="images/table4.jpg"><div class="overlay"><h3>Section F</h3><p>Performing Test</p></div></div>
+        <div class="photo fade"><img src="images/table5.jpg"><div class="overlay"><h3>Section  G</h3><p>Hardware Assembly </p></div></div>
+        <div class="photo fade"><img src="images/all.jpg"><div class="overlay"><h3>Co Working Space</h3><p></p></div></div>
+    </section>
+
+    <!-- ⭐ ROW 2 TITLE -->
+    <h2 class="gallery-title">Moments of Work</h2>
+    <section class="gallery">
+        <div class="photo fade"><img src="images/5.jpg"><div class="overlay"><h3>Assembly Section</h3><p>Organized high-end components</p></div></div>
+        <div class="photo fade"><img src="images/6.jpg"><div class="overlay"><h3>Testing</h3><p>Validation of prototypes</p></div></div>
+        <div class="photo fade"><img src="images/13.jpg"><div class="overlay"><h3>Testing Facility</h3><p>Performance tuning lab</p></div></div>
+        <div class="photo fade"><img src="images/10.jpg"><div class="overlay"><h3>PCBA</h3><p>Advanced circuit prototyping</p></div></div>
+        <div class="photo fade"><img src="images/8.jpg"><div class="overlay"><h3>Meeting</h3><p>Team discussions</p></div></div>
+        <div class="photo fade"><img src="images/11.jpg"><div class="overlay"><h3>Software & Analysis</h3><p>Real-time circuit validation</p></div></div>
+        <div class="photo fade"><img src="images/9.jpg"><div class="overlay"><h3>Hardware & Analysis</h3><p>Inhouse testing</p></div></div>
+        <div class="photo fade"><img src="images/7.jpg"><div class="overlay"><h3>Working Environment</h3><p>Motivating workspace</p></div></div>
+    </section>
+
+    <!-- ⭐ ROW 3 TITLE -->
+    <h2 class="gallery-title">Life @ EMPowER Lab</h2>
+    <section class="gallery">
+        <div class="photo fade"><img src="images/20240628_183251.jpg"><div class="overlay"><h3>Joy Moments</h3><p>Dinner Outing</p></div></div>
+        <div class="photo fade"><img src="images/20240628_201419.jpg"><div class="overlay"><h3>Joy Moments</h3><p>Celebration</p></div></div>
+        <div class="photo fade"><img src="images/20250913_210014.jpg"><div class="overlay"><h3>Joy Moments</h3><p>Team Outing</p></div></div>
+    
+        <div class="photo fade"><img src="images/group.jpeg"><div class="overlay"><h3>Joy Moments</h3>Tea Time<p></p></div></div>
+        <div class="photo fade"><img src="images/group2.jpg"><div class="overlay"><h3>Team Photo Session</h3><p>Group Photo</p></div></div>
+        <div class="photo fade"><img src="images/p1.jpeg"><div class="overlay"><h3>Joy Moments</h3><p></p>Happy Captured</div></div>
+        <div class="photo fade"><img src="images/group_old.jpg"><div class="overlay"><h3>Outing</h3><p>Dinner Time with Students</p></div></div>
+        <div class="photo fade"><img src="images/bday.jpeg"><div class="overlay"><h3>Birthday Celebration</h3><p>Celebration Moments</p></div></div>
+    </section>
+
+</section>
+
+  <footer>© 2025 Piyush Kant | EM Power Lab</footer>
+
+  <script>
+    const elements = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+    elements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

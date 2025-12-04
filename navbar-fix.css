@@ -1,0 +1,16 @@
+nav {
+    background-color: white !important;
+    backdrop-filter: none !important;
+}
+
+nav .nav-links a {
+    color: #333 !important;
+}
+
+nav .logo {
+    color: #333 !important;
+}
+
+.mobile-menu-toggle {
+    color: #333 !important;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements - Dr. Piyush Kant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f5f8ff;
+        }
+        header {
+            background: linear-gradient(135deg, #00e0ff, #0077ff);
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 48px;
+        }
+        header p {
+            margin: 0;
+            font-size: 20px;
+            color: #eef6ff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .announcement-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .announcement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.15);
+        }
+        .announcement-card h3 {
+            color: #0077ff;
+            margin-bottom: 10px;
+        }
+        .announcement-card p {
+            color: #333;
+            line-height: 1.6;
+        }
+        .announcement-date {
+            color: #777;
+            font-size: 14px;
+            margin-top: 15px;
+            display: block;
+        }
+        footer {
+            background: #0077ff;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        /* Back to Top Button */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #0077ff;
+            color: #fff;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.4s, transform 0.3s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            font-size: 16px;
+        }
+        #scrollTopBtn.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #scrollTopBtn:hover {
+            background: #00c6ff;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+  <header>
+    <h1>📢 Announcements</h1>
+    <p>Stay updated with the latest news and research from Dr. Piyush Kant's lab</p>
+</header>
+
+<div class="container">
+
+    <!-- 1. PhD Admissions -->
+    <div class="announcement-card">
+        <h3>PhD Admissions Open</h3>
+        <p>Applications are invited for PhD positions in Power Electronics and Electrical Machines for the upcoming semester.</p>
+        <span class="announcement-date">Dec, 2025</span>
+    </div>
+
+    <!-- 2. Railways Milestone -->
+    <div class="announcement-card">
+        <h3>Milestone Achieved</h3>
+        <p>Three-phase electric locomotives in Indian Railways with GTO-based converters were originally equipped with harmonic filters to comply with the signalling interference limits. These filters were retained when these locomotives were upgraded to IGBT-based converters. Frequent failures and fire incidents were reported in these filters during service, and a 40 km/h operational restriction was imposed whenever they were isolated. With over 300 filter failures annually, the issue impacted locomotive availability and train punctuality across the 9,000-unit fleet that forms the backbone of Indian Railways. A system-level evaluation was carried out jointly by Indian Railways and me to assess the necessity of these filters. Converter simulations confirmed compliance of line current harmonics with EN 50238 limits even without the harmonic filter. Field trials with 1,392 test combinations across multiple propulsion makes verified conducted and radiated interference compatibility. Based on these results, permanent elimination of harmonic filters from the three-phase locomotives was authorized, leading to reduced failures, removal of speed restrictions, and projected lifetime savings exceeding INR 50 billion (≈ USD 560 million). This study provides an important case in railway traction electrification, demonstrating how a critical reliability issue was resolved and brought substantial operational and economic benefits.</p>
+        <span class="announcement-date">Nov, 2025</span>
+    </div>
+
+    <!-- 3. Research Paper -->
+    <div class="announcement-card">
+        <h3>New Research Paper Published</h3>
+        <p>Our latest paper on wireless EV charging has been published in IEEE Transactions on Power Electronics.</p>
+        <span class="announcement-date">Oct, 2025</span>
+    </div>
+
+    <!-- 4. Award -->
+    <div class="announcement-card">
+        <h3>Award Received</h3>
+        <p>Dr. Piyush Kant received the Best Researcher Award at the National Power Electronics Conference 2025.</p>
+        <span class="announcement-date">Sep, 2025</span>
+    </div>
+
+</div>
+
+<button id="scrollTopBtn" title="Back to Top">⬆ Back to Top</button>
+
+<footer>
+    &copy; 2025 Piyush Kant. All rights reserved.
+</footer>
+
+<script>
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 250) scrollBtn.classList.add("visible");
+        else scrollBtn.classList.remove("visible");
+    });
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
