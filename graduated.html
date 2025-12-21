@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master’s Projects | Dr. Piyush Kant</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0a0f29, #12224c, #1b3b6f);
+        color: #fff;
+        min-height: 100vh;
+    }
+
+    header {
+        text-align: center;
+        padding: 70px 20px 40px;
+    }
+
+    header h1 {
+        font-size: 42px;
+        color: #00ffff;
+        text-shadow: 0 0 15px #00ffff80;
+    }
+
+    header p {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #cfd8ff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 20px 20px 80px;
+    }
+
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+
+    .project-card {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 18px;
+        padding: 28px;
+        backdrop-filter: blur(10px);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
+    }
+
+    .project-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent, rgba(0,255,255,0.15), transparent);
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .project-card:hover::before {
+        opacity: 1;
+    }
+
+    .project-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #00ffff;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .student-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+        margin-bottom: 6px;
+    }
+
+    .student-roll {
+        font-size: 14px;
+        color: #d0d0d0;
+        margin-bottom: 10px;
+    }
+
+    .supervisor {
+        font-size: 14px;
+        color: #e6e6e6;
+        line-height: 1.5;
+    }
+
+    .year-badge {
+        display: inline-block;
+        margin-top: 14px;
+        padding: 6px 14px;
+        font-size: 13px;
+        background: rgba(0, 255, 255, 0.2);
+        color: #00ffff;
+        border-radius: 20px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px;
+        background: rgba(0, 0, 0, 0.35);
+        color: #aaa;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Master’s (Completed)</h1>
+    <p>Graduate Research Projects Supervised by Dr. Piyush Kant</p>
+</header>
+
+<div class="container">
+    <div class="project-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+            <div class="project-title">
+                Design, Control and Analysis of Synchronous Reluctance Motor Drive
+            </div>
+            <div class="student-name">Mr. Madyahnam Parashu Ramudu</div>
+            <div class="student-roll">Roll No: 21104051</div>
+            <div class="supervisor">
+                Supervisor: Dr. Piyush Kant
+            </div>
+            <span class="year-badge">June 2023</span>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+            <div class="project-title">
+                Interior Permanent Magnet Synchronous Motor Drive for Electric Vehicle Applications
+            </div>
+            <div class="student-name">Mr. Sai Chandu Kadupu</div>
+            <div class="student-roll">Roll No: 22104090</div>
+            <div class="supervisor">
+                Supervisor: Dr. Piyush Kant
+            </div>
+            <span class="year-badge">June 2024</span>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+            <div class="project-title">
+                Wide Speed Range Operation of PM-Assisted Synchronous Reluctance Motor Drive for EV Applications
+            </div>
+            <div class="student-name">Mr. Vaishnav K. S.</div>
+            <div class="student-roll">Roll No: 22104122</div>
+            <div class="supervisor">
+                Supervisor: Dr. Piyush Kant
+            </div>
+            <span class="year-badge">July 2024</span>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+            <div class="project-title">
+                Design and Development of Three-Phase Two-Level Voltage Source Converter Using SiC MOSFET
+                for Charging and Traction Applications
+            </div>
+            <div class="student-name">Mr. Sushovan Bhattacharjee</div>
+            <div class="student-roll">Roll No: 22104112</div>
+            <div class="supervisor">
+                Supervisors: Dr. Piyush Kant, Dr. Alok Ranjan Verma
+            </div>
+            <span class="year-badge">September 2024</span>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    2024 Piyush Kant. All rights reserved.
+</footer>
+
+</body>
+</html>
