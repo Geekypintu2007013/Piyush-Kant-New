@@ -3,194 +3,231 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Master’s Projects | Dr. Piyush Kant</title>
+<title>Master’s (Completed) | Dr. Piyush Kant</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    body {
-        background: linear-gradient(135deg, #0a0f29, #12224c, #1b3b6f);
-        color: #fff;
-        min-height: 100vh;
-    }
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,
+        #050b2e,
+        #0a1f4d,
+        #1b3b6f,
+        #3a1c71
+    );
+    background-attachment:fixed;
+    color:#ffffff;
 
-    header {
-        text-align: center;
-        padding: 70px 20px 40px;
-    }
+    /* Page load animation */
+    opacity:0;
+    animation:pageFadeIn 1.1s ease forwards;
+}
 
-    header h1 {
-        font-size: 42px;
-        color: #00ffff;
-        text-shadow: 0 0 15px #00ffff80;
+/* Page fade animation */
+@keyframes pageFadeIn{
+    from{
+        opacity:0;
+        transform:translateY(12px);
     }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-    header p {
-        margin-top: 10px;
-        font-size: 18px;
-        color: #cfd8ff;
-    }
+/* Section */
+.masters-section{
+    max-width:1000px;
+    margin:80px auto;
+    padding:20px;
 
-    .container {
-        max-width: 1200px;
-        margin: auto;
-        padding: 20px 20px 80px;
-    }
+    /* Section animation */
+    animation:sectionSlide 1.2s ease forwards;
+}
 
-    .project-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
+@keyframes sectionSlide{
+    from{
+        opacity:0;
+        transform:translateY(20px);
     }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-    .project-card {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 18px;
-        padding: 28px;
-        backdrop-filter: blur(10px);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        position: relative;
-        overflow: hidden;
-    }
+/* Heading */
+.masters-section h2{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:45px;
+    background:linear-gradient(90deg,#00eaff,#a855f7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    text-shadow:0 0 18px rgba(0,200,255,0.5);
+}
 
-    .project-card:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 0 25px rgba(0, 255, 255, 0.35);
-    }
+/* List */
+.masters-list{
+    list-style:none;
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    counter-reset:item;
+}
 
-    .project-card::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(120deg, transparent, rgba(0,255,255,0.15), transparent);
-        opacity: 0;
-        transition: opacity 0.4s;
-    }
+/* Card */
+.masters-list li{
+    counter-increment:item;
+    position:relative;
+    padding:30px 34px;
+    border-radius:20px;
+    background:linear-gradient(
+        145deg,
+        rgba(0,170,255,0.18),
+        rgba(140,0,255,0.15)
+    );
+    backdrop-filter:blur(14px);
+    border-left:6px solid #00eaff;
+    transition:transform 0.35s ease, box-shadow 0.35s ease;
 
-    .project-card:hover::before {
-        opacity: 1;
-    }
+    /* Card reveal animation */
+    opacity:0;
+    animation:cardFadeUp 0.8s ease forwards;
+}
 
-    .project-title {
-        font-size: 20px;
-        font-weight: 700;
-        color: #00ffff;
-        margin-bottom: 12px;
-        line-height: 1.4;
-    }
+.masters-list li:nth-child(1){ animation-delay:0.3s; }
+.masters-list li:nth-child(2){ animation-delay:0.45s; }
+.masters-list li:nth-child(3){ animation-delay:0.6s; }
+.masters-list li:nth-child(4){ animation-delay:0.75s; }
 
-    .student-name {
-        font-size: 16px;
-        font-weight: 600;
-        color: #ffffff;
-        margin-bottom: 6px;
+@keyframes cardFadeUp{
+    from{
+        opacity:0;
+        transform:translateY(25px);
     }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
 
-    .student-roll {
-        font-size: 14px;
-        color: #d0d0d0;
-        margin-bottom: 10px;
-    }
+/* Hover */
+.masters-list li:hover{
+    transform:translateY(-8px) scale(1.01);
+    box-shadow:
+        0 12px 35px rgba(0,200,255,0.35),
+        0 0 25px rgba(160,0,255,0.25);
+}
 
-    .supervisor {
-        font-size: 14px;
-        color: #e6e6e6;
-        line-height: 1.5;
-    }
+/* Number badge */
+.masters-list li::before{
+    content:counter(item);
+    position:absolute;
+    top:-18px;
+    left:-18px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:#001018;
+    background:linear-gradient(135deg,#00eaff,#a855f7);
+    box-shadow:0 0 15px rgba(0,234,255,0.8);
+}
 
-    .year-badge {
-        display: inline-block;
-        margin-top: 14px;
-        padding: 6px 14px;
-        font-size: 13px;
-        background: rgba(0, 255, 255, 0.2);
-        color: #00ffff;
-        border-radius: 20px;
-    }
+/* Title */
+.title{
+    display:block;
+    font-size:18.5px;
+    font-weight:600;
+    color:#7df9ff;
+    margin-bottom:12px;
+    line-height:1.45;
+    text-shadow:0 0 10px rgba(125,249,255,0.6);
+}
 
-    footer {
-        text-align: center;
-        padding: 25px;
-        background: rgba(0, 0, 0, 0.35);
-        color: #aaa;
-        font-size: 14px;
+/* Details */
+.details{
+    font-size:14.8px;
+    color:#e5e7eb;
+    line-height:1.65;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    color:#cfcfcf;
+    opacity:0.85;
+    animation:pageFadeIn 1.4s ease forwards;
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .masters-section h2{
+        font-size:30px;
     }
+    .masters-list li{
+        padding:24px 26px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Master’s (Completed)</h1>
-    <p>Graduate Research Projects Supervised by Dr. Piyush Kant</p>
-</header>
+<section class="masters-section">
+    <h2>Master’s (Completed)</h2>
 
-<div class="container">
-    <div class="project-grid">
+    <ol class="masters-list">
 
-        <!-- Project 1 -->
-        <div class="project-card">
-            <div class="project-title">
-                Design, Control and Analysis of Synchronous Reluctance Motor Drive
-            </div>
-            <div class="student-name">Mr. Madyahnam Parashu Ramudu</div>
-            <div class="student-roll">Roll No: 21104051</div>
-            <div class="supervisor">
-                Supervisor: Dr. Piyush Kant
-            </div>
-            <span class="year-badge">June 2023</span>
-        </div>
+        <li>
+            <span class="title">Design, Control and Analysis of Synchronous Reluctance Motor Drive</span>
+            <span class="details">
+                Mr. Madyahnam Parashu Ramudu (21104051), June-2023<br>
+                Supervised by Dr. Piyush Kant
+            </span>
+        </li>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-            <div class="project-title">
-                Interior Permanent Magnet Synchronous Motor Drive for Electric Vehicle Applications
-            </div>
-            <div class="student-name">Mr. Sai Chandu Kadupu</div>
-            <div class="student-roll">Roll No: 22104090</div>
-            <div class="supervisor">
-                Supervisor: Dr. Piyush Kant
-            </div>
-            <span class="year-badge">June 2024</span>
-        </div>
+        <li>
+            <span class="title">Interior Permanent Magnet Synchronous Motor Drive For Electric Vehicle Application</span>
+            <span class="details">
+                Mr. Sai Chandu Kadupu (22104090), June-2024<br>
+                Supervised by Dr. Piyush Kant
+            </span>
+        </li>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <div class="project-title">
-                Wide Speed Range Operation of PM-Assisted Synchronous Reluctance Motor Drive for EV Applications
-            </div>
-            <div class="student-name">Mr. Vaishnav K. S.</div>
-            <div class="student-roll">Roll No: 22104122</div>
-            <div class="supervisor">
-                Supervisor: Dr. Piyush Kant
-            </div>
-            <span class="year-badge">July 2024</span>
-        </div>
+        <li>
+            <span class="title">Wide Speed Range Operation of Permanent Magnet Assisted Synchronous Reluctance Motor Drive For Electric Vehicle Applications</span>
+            <span class="details">
+                Mr. Vaishnav K S (22104122), July-2024<br>
+                Supervised by Dr. Piyush Kant
+            </span>
+        </li>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-            <div class="project-title">
-                Design and Development of Three-Phase Two-Level Voltage Source Converter Using SiC MOSFET
-                for Charging and Traction Applications
-            </div>
-            <div class="student-name">Mr. Sushovan Bhattacharjee</div>
-            <div class="student-roll">Roll No: 22104112</div>
-            <div class="supervisor">
-                Supervisors: Dr. Piyush Kant, Dr. Alok Ranjan Verma
-            </div>
-            <span class="year-badge">September 2024</span>
-        </div>
+        <li>
+            <span class="title">Design and Development of Three Phase Two Level Voltage Source Converter Using SiC MOSFET for Charging and Traction Applications</span>
+            <span class="details">
+                Mr. Sushovan Bhattacharjee (22104112), Sept.-2024<br>
+                Supervised by Dr. Piyush Kant and Dr. Alok Ranjan Verma
+            </span>
+        </li>
 
-    </div>
-</div>
+    </ol>
+</section>
 
 <footer>
-    © 2025 Piyush Kant | EMPowER Lab 
+    © 2025 Piyush Kant | EMPowER Lab
 </footer>
 
 </body>
